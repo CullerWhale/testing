@@ -1,0 +1,59 @@
+<form class="sleep-form">
+
+    <!--Enter Sleep Title -->
+    <p>{{ userId }}</p>
+    <div>
+        <label for="sleep-title">Title:</label>
+        <input type="text" id="sleep-title" />
+    </div>
+
+    <!--Enter Sleep Description -->
+    <div>
+        <label for="sleep-description">Sleep description:</label>
+        <textarea type="text" id="sleep-description"></textarea>
+    </div>
+
+    <!--Enter Hours Slept -->
+    <div>
+        <label for="hours-slept">Hours slept:</label>
+        <input type="text" id="hours-slept" />
+    </div>
+
+    <!--Enter If Dream of Not -->
+    <div>
+        <p>
+            <label>
+                <input type="checkbox" class="filled-in" id="dream-sw" onclick="showDreamDescription()" />
+                <span>Did you have a Dream?</span>
+            </label>
+        </p>
+    </div>
+
+    <!--Enter Dream Description -->
+    <div id="dream-description-cont">
+        <label for="dream-description">Dream description:</label>
+        <textarea type="text" id="dream-description"></textarea>
+    </div>
+
+    <!--Enter Tags -->
+    <div class="input-field col s12">
+        <select multiple id="tagMenu">
+            <option value="" disabled="disabled">None</option>
+            {{#each tag}}
+            <option value={{id}}>{{ tag_name }}</option>
+            {{/each}}
+        </select>
+        <label>Choose your Tags:</label>
+    </div>
+
+    <!--Submit Button -->
+    <div class="container">
+        <div class="center">
+            <button type="submit">Post</button>
+        </div>
+    </div>
+</form>
+
+{{#if loggedIn}}
+<script src="/javascript/createSleep.js"></script>
+{{/if}}

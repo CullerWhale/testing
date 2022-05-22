@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepily Home</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div>
+        <header>
+            <h1 class = "headerClass col 3 center-align blackText deep-purple accent-1">
+                <a href="/">Sleepily</a>
+            </h1>
+            <nav class = "navClass row center-align">
+                {{#if loggedIn}}
+                <button id="logout" class="col s4">Logout</button>
+                <a href="/create-sleep" class ="col s4">New Entry</a>
+                {{else}}
+                <a href="/signup" class ="col s4">Sign Up</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
