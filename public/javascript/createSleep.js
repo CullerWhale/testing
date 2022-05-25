@@ -54,6 +54,17 @@ function showDreamDescription() {
     }
 }
 
+//create tag
+
+function createTag(event) {
+    //crucial to prevent reloading page
+    event.preventDefault()
+    const tagText = document.getElementById('create-tag');
+    fetch('/api/tag', {
+        
+    })
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     M.FormSelect.init(elems);
